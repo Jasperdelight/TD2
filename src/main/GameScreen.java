@@ -12,14 +12,19 @@ public class GameScreen extends JPanel{
 	private Random random;
 	private BufferedImage img;
 	private long lastTime;
-	private ArrayList<BufferedImage> sprites = new ArrayList<>();
 	private int frames;
+
+	private ArrayList<BufferedImage> sprites = new ArrayList<>();
+
+
 	public GameScreen(BufferedImage img) {
 		this.img = img;
 
 		loadSprites();
 
 		random = new Random();
+
+
 	}
 	private void loadSprites() {
 
@@ -41,7 +46,6 @@ public class GameScreen extends JPanel{
 		}
 
 		callFPS();
-		repaint();
 	}
 	private void callFPS(){
 				frames++;

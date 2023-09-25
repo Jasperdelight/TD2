@@ -12,8 +12,15 @@ public class Game extends JFrame{
 	private GameScreen gameScreen;
 	private BufferedImage img;
 
+	private double timePerFrame;
+	private long lastFrame;
+
 	public Game(){
 		
+		timePerFrame = 1000000000.0 / 60.0;
+
+		
+
 		importImg();
 		setSize(640, 640);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -30,10 +37,22 @@ public class Game extends JFrame{
 			e.printStackTrace();
 		}
 	}
+	private void loopGame(){
+		while(true){
+
+			if(System.nanoTime() - lastFrame >= timePerFrame){
+				lastFrame = System.nanoTime();
+				repaint();
+			}else{
+				
+			}
+		}
+	}
 
 	public static void main(String[] args) {
 		
 		Game game = new Game();
+		game.loopGame();
 	}
 
 }
