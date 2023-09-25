@@ -16,11 +16,11 @@ public class Game extends JFrame{
 		
 		importImg();
 		setSize(640, 640);
-		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		gameScreen = new GameScreen(img);
 		add(gameScreen);
+		setVisible(true);
 	}
 	private void importImg(){
 		InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
